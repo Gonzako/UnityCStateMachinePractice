@@ -1,15 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using System.Collections.Generic;
 
 namespace GDMachine
 {
 
 	public interface IMachineStateTransition
 	{
+		IMachineState enterState { get; set; }
 
 
+		//Might not be used
+		IMachineState exitState { get; set; }
+
+		IBoolFunc evaluator { get; set; }
+
+		IMachineState transition();
 
 	}
 
